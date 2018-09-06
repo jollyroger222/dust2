@@ -9,6 +9,8 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="PrimeFaces-6.1" />
+          <element id="library" level="project" name="org.everit.osgi.bundles.org.scream3r.jssc-2.8.0" />
+          <element id="library" level="project" name="org.everit.osgi.bundles.org.scream3r.jssc-2.8.0-sources" />
         </element>
       </element>
     </root>
