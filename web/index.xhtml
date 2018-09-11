@@ -10,76 +10,70 @@
 
 <h:head>
 
+    <title>test-list-index</title>
 </h:head>
 
 <h:body>
-   <div class="b-admin b-container">
+    <div class="b-admin b-container">
+
+        <!--<h:form>-->
+            <!--<p:inputText value="#{carController.name}" />-->
+            <!--<p:commandButton value="SAVE" action="#{carController.save2}" />-->
+        <!--</h:form>-->
+
+        <h1>test test</h1>
+
+        <h:form>
+            <p:spacer height="20"/>
+            <p:outputPanel>
+                <p:button style="width: 150px;" value="Добавить" outcome="test-list"/>
+                <p:spacer width="20"/>
+                <p:button style="width: 150px;" value="Назад" href="/admin"/>
+            </p:outputPanel>
+            <p:spacer height="20"/>
+            <!--<h:outputText value="uartListController.uartDAO.test2"></h:outputText>-->
+
+            <p:inputText value="#{uartListController.name}" placeholder="Имя категории"/>
+
+            <!--<p:outputLabel value="#{uartListController.test6}" placeholder="Имя категории"/>-->
+            <!--<p:outputLabel value="uartListController.test6" placeholder="Имя категории"/>-->
+
+            <h:outputText value="#{uartListController.test6}" />
+            <h:outputText value="uartListController.test6" />
 
 
+            <p:dataTable id="cartTable" value="#{uartListController.test6}" var="test"
+                         rowIndexVar="indexVar">
+                <p:column width="30" style="text-align: right" headerText="№">
+                    <p:outputLabel value="#{indexVar+1}."/>
+                </p:column>
+                <p:column width="200" headerText="Артикул">
+                    <p:outputLabel value="#{test.id}"/>
+                </p:column>
 
-      <h1>Уровень пыли</h1>
-
-      <h:form>
-         <p:spacer height="20"/>
-         <p:outputPanel>
-            <p:button style="width: 150px;" value="Добавить" outcome="product-edit"/>
-            <p:spacer width="20"/>
-            <p:button style="width: 150px;" value="Назад" href="/admin"/>
-         </p:outputPanel>
-         <p:spacer height="20"/>
-         <ui:repeat value="#{productListController.listCatalog}" var="catalog">
-            <p:dataTable id="dataTable" value="#{productListController.getListProductByCatalogId(catalog.id)}"
-                         var="product" rowIndexVar="indexVar">
-               <f:facet name="header">
-                  <p:outputPanel style="margin: 10px; text-align: left">
-                     <p:outputLabel value="#{catalog.name}"/>
-                  </p:outputPanel>
-               </f:facet>
-               <p:column width="30" style="text-align: right" headerText="№">
-                  <p:outputLabel value="#{indexVar+1}."/>
-               </p:column>
-               <p:column width="200" headerText="Артикул">
-                  <p:outputLabel value="#{product.id}"/>
-               </p:column>
-               <p:column headerText="Наименование">
-                  <p:outputLabel value="#{product.name}"/>
-               </p:column>
-               <p:column headerText="Краткий обзор">
-                  <p:outputLabel value="#{product.overview}"/>
-               </p:column>
-               <p:column headerText="Описание">
-                  <p:outputLabel value="#{product.description}"/>
-               </p:column>
-               <p:column headerText="Категория">
-                  <p:outputLabel value="#{product.category.name}"/>
-               </p:column>
-               <p:column width="30">
-                  <p:link outcome="product-edit">
-                     <i class="fa fa-edit" style="font-size: 1.5em; margin: 5px;"/>
-                     <f:param name="id" value="#{product.id}"/>
-                  </p:link>
-               </p:column>
-               <p:column width="30">
-                  <p:commandLink update="dataTable"
-                                 actionListener="#{productListController.removeProductById(product.id)}">
-                     <i class="fa fa-trash" style="font-size: 1.5em; margin: 5px;"/>
-                  </p:commandLink>
-               </p:column>
+                <p:column headerText="Описание">
+                    <p:outputLabel value="#{test.description}"/>
+                </p:column>
+                <p:column width="30">
+                    <p:link outcome="basket-edit">
+                        <i class="fa fa-edit" style="font-size: 1.5em; margin: 5px;"/>
+                        <f:param name="id" value="#{test.id}"/>
+                    </p:link>
+                </p:column>
+                <!--<p:column width="30">-->
+                    <!--<p:commandLink update="cartTable"-->
+                                   <!--actionListener="#{uartListController.deleteBasketById(test.id)}">-->
+                        <!--<i class="fa fa-trash" style="font-size: 1.5em; margin: 5px;"/>-->
+                    <!--</p:commandLink>-->
+                <!--</p:column>-->
             </p:dataTable>
             <p:spacer height="20"/>
-         </ui:repeat>
-         <p:spacer height="20"/>
-         <p:outputPanel>
-            <p:button style="width: 150px;" value="Добавить" outcome="product-edit"/>
-            <p:spacer width="20"/>
-            <p:button style="width: 150px;" value="Назад" href="/admin"/>
-         </p:outputPanel>
 
-      </h:form>
+        </h:form>
 
-      <div class="b-footer__clr"></div>
+        <div class="b-footer__clr"></div>
 
-   </div>
+    </div>
 
 
 

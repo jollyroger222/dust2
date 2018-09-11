@@ -10,7 +10,7 @@ public class Uart {
 
     public static void main(String[] args) {
         //Передаём в конструктор имя порта
-        serialPort = new SerialPort("COM1");
+        serialPort = new SerialPort("ttyAMAO");
         try {
             //Открываем порт
             serialPort.openPort();
